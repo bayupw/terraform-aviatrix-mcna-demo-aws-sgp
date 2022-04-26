@@ -66,7 +66,7 @@ module "ssm_instance_profile" {
 module "aws_sgp_prod02_ssm" {
   source  = "bayupw/ssm-vpc-endpoint/aws"
   version = "1.0.1"
-  
+
   vpc_id         = module.aws_sgp_spoke_prod02.vpc.vpc_id
   vpc_subnet_ids = [module.aws_sgp_spoke_prod02.vpc.private_subnets[0].subnet_id]
 
@@ -95,7 +95,7 @@ module "aws_sgp_prod02_instance" {
 module "aws_sgp_dev01_ssm" {
   source  = "bayupw/ssm-vpc-endpoint/aws"
   version = "1.0.1"
-  
+
   vpc_id         = module.aws_sgp_spoke_dev01.vpc.vpc_id
   vpc_subnet_ids = [module.aws_sgp_spoke_dev01.vpc.private_subnets[0].subnet_id]
 
