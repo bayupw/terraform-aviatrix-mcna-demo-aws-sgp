@@ -1,3 +1,5 @@
+data "aws_region" "current" {}
+
 #################
 # AWS Singapore #
 #################
@@ -8,7 +10,7 @@ module "aws_sgp_transit02" {
 
   name                   = "aws-sgp-transit02"
   cloud                  = "aws"
-  region                 = "ap-southeast-1"
+  region                 = data.aws_region.current.name
   cidr                   = cidrsubnet(var.aws_sgp_supernet, 7, 0)
   account                = "aws-account"
   ha_gw                  = false
@@ -29,7 +31,7 @@ module "aws_sgp_spoke_prod02" {
   name          = "aws-sgp-spoke-prod02"
   cloud         = "AWS"
   cidr          = cidrsubnet(var.aws_sgp_supernet, 8, 11)
-  region        = "ap-southeast-1"
+  region        = data.aws_region.current.name
   account       = "aws-account"
   instance_size = "t2.micro"
   single_az_ha  = false
@@ -45,7 +47,7 @@ module "aws_sgp_spoke_dev01" {
   name          = "aws-sgp-spoke-dev01"
   cloud         = "AWS"
   cidr          = cidrsubnet(var.aws_sgp_supernet, 8, 12)
-  region        = "ap-southeast-1"
+  region        = data.aws_region.current.name
   account       = "aws-account"
   instance_size = "t2.micro"
   single_az_ha  = false
