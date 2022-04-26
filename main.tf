@@ -58,7 +58,7 @@ module "aws_sgp_spoke_dev01" {
 # Instances #
 #############
 
-module "ssm-instance-profile" {
+module "ssm_instance_profile" {
   source  = "bayupw/ssm-instance-profile/aws"
   version = "1.0.0"
 }
