@@ -74,7 +74,8 @@ module "aws_sgp_prod02_ssm" {
 }
 
 module "aws_sgp_prod02_instance" {
-  source  = "./module/aws-amazon-linux-2"
+  source  = "bayupw/amazon-linux-2/aws"
+  version = "1.0.0"
 
   instance_hostname    = "sgp-prod02-instance"
   vpc_id               = module.aws_sgp_spoke_prod02.vpc.vpc_id
@@ -102,7 +103,8 @@ module "aws_sgp_dev01_ssm" {
 }
 
 module "aws_sgp_dev01_instance" {
-  source  = "./module/aws-amazon-linux-2"
+  source  = "bayupw/amazon-linux-2/aws"
+  version = "1.0.0"
 
   instance_hostname    = "sgp-dev01-instance"
   vpc_id               = module.aws_sgp_spoke_dev01.vpc.vpc_id
