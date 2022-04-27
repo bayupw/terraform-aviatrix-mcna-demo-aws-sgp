@@ -1,26 +1,11 @@
-variable "aws_syd_supernet" {
+variable "supernet" {
   type    = string
   default = "10.1.0.0/16"
-}
-
-variable "aws_sgp_supernet" {
-  type    = string
-  default = "10.2.0.0/16"
-}
-
-variable "gcp_sgp_supernet" {
-  type    = string
-  default = "10.3.0.0/16"
 }
 
 variable "aws_account" {
   type    = string
   default = "aws-account"
-}
-
-variable "gcp_account" {
-  type    = string
-  default = "gcp-account"
 }
 
 variable "instance_username" {
