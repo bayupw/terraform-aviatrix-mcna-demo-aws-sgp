@@ -1,1 +1,1 @@
-# MCNA Demo - AWS Singapore
+# MCNA Demo | AWS Singapore Region
